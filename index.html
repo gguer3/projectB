@@ -40,5 +40,15 @@
     <p style="text-align:center">
         <a href="pages/play.html">Click Here to Start</a>
     </p>
+
+    <script>
+        function reset() {
+            localStorage.setItem("Bs", 0);
+        }
+        window.addEventListener('load', event => {
+            reset();
+        });
+    </script>
+
 </body>
-</html>cs
+</html>

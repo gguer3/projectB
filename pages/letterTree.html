@@ -4,47 +4,90 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Find the B's!</title>
+    <script>
+      function printBtn() {
+        var letters = [];
+        for (let i = 0; i < 6; i++){
+          chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+          for (let i = 1; i <= 11; i++) {
+            letters.push((chars.charAt(Math.floor(Math.random() * 26))));
+          }
+        }
+          for (var i = 0; i < letters.length; i++) {
+             var btn = document.createElement("button");
+             var t = document.createTextNode(letters[i]);
+             btn.appendChild(t);
+             document.body.appendChild(btn);
+          }
+      }
+    </script>
 </head>
 
 <style>
-    body{
-      align-items: center;
-      background-color: floralwhite;
-    }
-    h1{
-      text-align: center;
-      color: darkseagreen;
-    }
-    img {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    a:link, a:visited {
-      background-color: darkseagreen;
-      color: honeydew;
-      padding: 15px 25px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-    }
-    a:hover, a:active {
-      background-color: mediumseagreen;
-    }
-    .center {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 50%;
-    }
+  body{
+    align-items: center;
+    background-color: floralwhite;
+  }
+  h1{
+    text-align: center;
+    color: darkseagreen;
+  }
+  .image { 
+    position: relative; 
+    width: 100%; /* for IE 6 */
+  }
+  h2 { 
+    position: absolute; 
+    top: 200px; 
+    left: 0; 
+    width: 100%; 
+  }
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  a:link, a:visited {
+    background-color: darkseagreen;
+    color: honeydew;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  a:hover, a:active {
+    background-color: mediumseagreen;
+  }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  button {
+    background-color: darkseagreen;
+    border: none;
+    color: honeydew;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+  }
 </style>
 
-<body>
-    <img src="../imgs/tree.png" alt="tree" width="500" height="600" style="width:50%;" class="center">
+<body onload="printBtn();">
 
-    <div style="position: fixed; bottom: 0; width:100%; text-align:center">    
-        <a href="play.html">Go Back</a>
-    </div>
+  <div style="position: fixed; bottom: 0; width:100%; text-align:center">    
+    <a href="play.html">Go Back</a>
+  </div>
+
+    <script>
+      //window.addEventListener('load', event => {
+          
+      //});
+    </script>
 </body>
 </html>
