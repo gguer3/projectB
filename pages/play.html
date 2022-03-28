@@ -4,8 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <title>Here's Your Butterfly</title>
+    <script>
+      function subtractB() {
+        numB = Number(localStorage.getItem("Bs"));
+        if (numB <= 0) {
+          alert('you need more B\'s to take care of your Butterfly')
+        }
+        else {
+          numB -= 1;
+          localStorage.setItem("Bs", numB);
+          document.getElementById("Bcount").innerHTML = localStorage.getItem("Bs");
+        }
+      }
+    </script>
 </head>
 
 <style>
@@ -19,7 +31,19 @@
   }
   h4{
     text-align: center;
-    color: black;
+    color: lightseagreen;
+  }
+  button {
+    text-align: center;
+    background-color: darkseagreen;
+    border: none;
+    color: honeydew;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+  }
+  button:hover {
+    background-color: mediumseagreen;
   }
 </style>
 
@@ -31,12 +55,21 @@
     </marquee>
 
     <div style="position: absolute; top: 0; right: 0; width: 100px; text-align:right;">
-      <button type="button"> <img src="../imgs/leaf.png" height ="100" width="100" class="center"/></button>
-      <h4>food: </h4>
-      <button type="button"> <img src="../imgs/water.png" height ="100" width="100" class="center"/></button>
-      <h4>water: </h4>
+      <button type="button" onclick="subtractB()"> <img src="../imgs/leaf.png" height ="100" width="100" class="center"/></button>
+      <h4>Food: </h4>
+      <button type="button" onclick="subtractB()"> <img src="../imgs/water.png" height ="100" width="100" class="center"/></button>
+      <h4>Water: </h4>
     </div>
-    
+
+    <div style="position: fixed; bottom: 0; right: 0; margin-top: -50px;
+    margin-left: -100px; width: 100px; text-align:right;">
+      <h4>B's Collected:</h4>
+      <h4 id="Bcount"></h4>
+      <script>
+        document.getElementById("Bcount").innerHTML = localStorage.getItem("Bs");
+      </script>
+    </div>
+
     <div style="position: fixed; bottom: 0; width:100%; text-align:center"> 
       <a href="letterTree.html">
         <img src="../imgs/tree.png" alt="tree" width="350" height="500" class="center">
@@ -48,16 +81,6 @@
         <img src="../imgs/tree.png" alt="tree" width="350" height="500" class="center">
       </a>
     </div>
-
-    <script>
-      function test() {
-        alert("The function 'test' is executed");
-      }
-      let btn = document.getElementById("btn");
-      btn.addEventListener('click', event => {
-        test();
-      });
-    </script>
       
 </body>
 </html>

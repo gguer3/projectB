@@ -77,7 +77,7 @@
       }
       function ifclicked(X) {
         if (letters[X] == 'B') {
-          numB = localStorage.getItem("Bs");
+          numB = Number(localStorage.getItem("Bs"));
           numB += 1;
           localStorage.setItem("Bs", numB);
           alert('you found a B!')
@@ -125,7 +125,8 @@
   }
 </style>
 
-<body>
+<body></body>
+  <h1>B is for Butterfly</h1>
 
   <script>
     window.addEventListener('load', event => {
